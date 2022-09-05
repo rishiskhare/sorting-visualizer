@@ -1,17 +1,18 @@
-const bubbleSort = (a, updateBars) => {
+const selectionSort = (a, updateBars) => {
   let changes = [];
   let arr = JSON.parse(JSON.stringify(a));
   for (let i = 0; i < arr.length - 1; i++) {
+    let minIndex = i;
     for (let j = i + 1; j < arr.length; j++) {
-      if (arr[i] > arr[j]) {
-        // Swap elements at i and j
-        const temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-        changes.push([...arr]);
+      if (arr[j] < arr[minIndex]) {
+        minIndex = j;
       }
-      // updateBars(arr);
     }
+    // Swap elements at i and min
+    const minVal = arr[minIndex];
+    arr[minIndex] = arr[i];
+    arr[i] = minVal;
+    changes.push([...arr]);
   }
   updateBars(changes);
   // let arr = JSON.parse(JSON.stringify(a));
@@ -21,4 +22,4 @@ const bubbleSort = (a, updateBars) => {
   // updateBars(arr);
 };
 
-export default bubbleSort;
+export default selectionSort;
