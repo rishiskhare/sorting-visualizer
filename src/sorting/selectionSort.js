@@ -15,11 +15,6 @@ const selectionSort = (a, updateBars) => {
     changes.push([...arr]);
   }
   updateBars(changes);
-  // let arr = JSON.parse(JSON.stringify(a));
-  // arr[0] = -5;
-  // updateBars(arr);
-  // arr[0] = -10;
-  // updateBars(arr);
 };
 
 export default selectionSort;

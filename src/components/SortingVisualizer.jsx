@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import bubbleSort from "../sorting/bubbleSort";
 import selectionSort from "../sorting/selectionSort";
+import insertionSort from "../sorting/selectionSort";
 
 const SortingVisualizer = () => {
   const [numItems, setNumItems] = useState(25);
@@ -69,6 +70,9 @@ const SortingVisualizer = () => {
       </button>
       <button onClick={() => selectionSort(itemsArray, updateBars)}>
         Selection Sort
+      </button>
+      <button onClick={() => insertionSort(itemsArray, updateBars)}>
+        Insertion Sort
       </button>
     </div>
   );
