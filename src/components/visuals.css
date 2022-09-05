@@ -1,0 +1,38 @@
+html, body, .App, #root, .daddy {
+    height: 100%;
+    width: 100%;
+}
+.btnn {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    width: 100px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+}
+.daddy{
+    display: grid;
+    grid-template-rows: 1fr 10fr 1fr;
+    width: auto;
+}
+
+.barHolder {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.bar {
+    border: solid black 1px;
+    width: 2em;
+    margin: 0;
+    margin-left: 3px;
+    margin-right: 2px;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.barCh {
+    background-color: chartreuse;
+}

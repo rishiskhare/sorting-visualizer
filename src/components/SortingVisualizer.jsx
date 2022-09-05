@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import bubbleSort from "../sorting/bubbleSort";
+import './visuals.css';
 
 const SortingVisualizer = () => {
   const [numItems, setNumItems] = useState(25);
@@ -56,14 +57,16 @@ const SortingVisualizer = () => {
   };
 
   return (
-    <div>
-      <button onClick={() => setItemsArray(shuffleArray(itemsArray))}>
+    <div className="daddy">
+      <button className="btnn" onClick={() => setItemsArray(shuffleArray(itemsArray))}>
         Shuffle
       </button>
-      {itemsArray.map((item) => (
-        <h1 key={item}>{item}</h1>
-      ))}
-      <button onClick={() => bubbleSort(itemsArray, updateBars)}>
+      <div className="barHolder">
+        {itemsArray.map((item) => (
+          <h1 className="bar" key={item}>{item}</h1>
+        ))}
+      </div>   
+      <button className="btnn" onClick={() => bubbleSort(itemsArray, updateBars)}>
         Bubble Sort
       </button>
     </div>
