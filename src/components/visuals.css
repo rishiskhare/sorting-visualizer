@@ -2,14 +2,19 @@ html, body, .App, #root, .daddy {
     height: 100%;
     width: 100%;
 }
-.btnn {
+button {
     display: flex;
-    justify-self: center;
-    align-self: center;
     width: 100px;
     height: 40px;
     align-items: center;
     justify-content: center;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.btnn {
+    display: flex;
+    align-self: center;
+    justify-self: center;
 }
 .daddy{
     display: grid;
@@ -35,4 +40,10 @@ html, body, .App, #root, .daddy {
 
 .barCh {
     background-color: chartreuse;
+}
+
+.btnnHolder {
+    display: flex;
+    justify-self: center;
+    align-self: center;
 }

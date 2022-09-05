@@ -28,22 +28,15 @@ const SortingVisualizer = () => {
     const timer = (arr) =>
       setTimeout(() => {
         setItemsArray(arr);
+
         console.log("CHANGE");
       }, delay * i);
     items.forEach((arr) => {
       timer(arr);
       i++;
-      // timer();
     });
     clearTimeout(timer);
     console.log("DONE!");
-    // setTimeOuts([
-    //   ...timeOuts,
-    //   setTimeout(() => {
-    //     setItemsArray(items);
-    //   }, delay * i),
-    // ]);
-    // seti(i + 1);
   };
 
   const shuffleArray = (a) => {
@@ -66,13 +59,16 @@ const SortingVisualizer = () => {
         {itemsArray.map((item) => (
           <h1 className="bar" key={item}>{item}</h1>
         ))}
+      </div>
+      <div className="btnnHolder">
+        <button onClick={() => bubbleSort(itemsArray, updateBars)}>
+          Bubble Sort
+        </button>
+        <button onClick={() => selectionSort(itemsArray, updateBars)}>
+          Selection Sort
+        </button>
       </div>   
-      <button className="btnn" onClick={() => bubbleSort(itemsArray, updateBars)}>
-        Bubble Sort
-      </button>
-      <button onClick={() => selectionSort(itemsArray, updateBars)}>
-        Selection Sort
-      </button>
+
     </div>
   );
 };
