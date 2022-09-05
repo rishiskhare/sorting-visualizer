@@ -5,7 +5,7 @@ import bubbleSort from "../sorting/bubbleSort";
 const SortingVisualizer = () => {
   const [numItems, setNumItems] = useState(25);
   // const [delay, setDelay] = useState(500);
-  let delay = 1000;
+  let delay = 200;
   const [i, seti] = useState(1);
   const [timeOuts, setTimeOuts] = useState([]);
 
@@ -20,14 +20,28 @@ const SortingVisualizer = () => {
   const [itemsArray, setItemsArray] = useState(generateDefaultArray(numItems));
 
   const updateBars = (items) => {
-    console.log(delay * i);
-    setTimeOuts([
-      ...timeOuts,
-      setTimeout(() => {
-        setItemsArray(items);
-      }, delay * i),
-    ]);
-    seti(i + 1);
+    // console.log(delay * i);
+    console.log("UPDATING BARS");
+    let i = 0;
+    const timer = (arr) => setTimeout(() => {
+      setItemsArray(arr);
+      console.log('CHANGE');
+    }, delay * i);
+    items.forEach(arr => {
+      timer(arr);
+      i++;
+      // timer();
+    });
+    clearTimeout(timer);
+    console.log("DONE!");
+    // setTimeOuts([
+    //   ...timeOuts,
+    //   setTimeout(() => {
+    //     setItemsArray(items);
+    //   }, delay * i),
+    // ]);
+    // seti(i + 1);
+    
   };
 
   const shuffleArray = (a) => {
