@@ -1,7 +1,13 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
+import bubbleSort from "../sorting/bubbleSort";
 
 const SortingVisualizer = () => {
-  const [numItems, setNumItems] = useState(100);
+  const [numItems, setNumItems] = useState(25);
+  // const [delay, setDelay] = useState(500);
+  let delay = 1000;
+  const [i, seti] = useState(1);
+  const [timeOuts, setTimeOuts] = useState([]);
 
   const generateDefaultArray = (items) => {
     const arr = [];
@@ -12,6 +18,17 @@ const SortingVisualizer = () => {
   };
 
   const [itemsArray, setItemsArray] = useState(generateDefaultArray(numItems));
+
+  const updateBars = (items) => {
+    console.log(delay * i);
+    setTimeOuts([
+      ...timeOuts,
+      setTimeout(() => {
+        setItemsArray(items);
+      }, delay * i),
+    ]);
+    seti(i + 1);
+  };
 
   const shuffleArray = (a) => {
     let arr = JSON.parse(JSON.stringify(a));
@@ -32,6 +49,9 @@ const SortingVisualizer = () => {
       {itemsArray.map((item) => (
         <h1 key={item}>{item}</h1>
       ))}
+      <button onClick={() => bubbleSort(itemsArray, updateBars)}>
+        Bubble Sort
+      </button>
     </div>
   );
 };
