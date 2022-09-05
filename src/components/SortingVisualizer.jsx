@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import bubbleSort from "../sorting/bubbleSort";
+import selectionSort from "../sorting/selectionSort";
 
 const SortingVisualizer = () => {
   const [numItems, setNumItems] = useState(25);
@@ -23,11 +24,12 @@ const SortingVisualizer = () => {
     // console.log(delay * i);
     console.log("UPDATING BARS");
     let i = 0;
-    const timer = (arr) => setTimeout(() => {
-      setItemsArray(arr);
-      console.log('CHANGE');
-    }, delay * i);
-    items.forEach(arr => {
+    const timer = (arr) =>
+      setTimeout(() => {
+        setItemsArray(arr);
+        console.log("CHANGE");
+      }, delay * i);
+    items.forEach((arr) => {
       timer(arr);
       i++;
       // timer();
@@ -41,7 +43,6 @@ const SortingVisualizer = () => {
     //   }, delay * i),
     // ]);
     // seti(i + 1);
-    
   };
 
   const shuffleArray = (a) => {
@@ -65,6 +66,9 @@ const SortingVisualizer = () => {
       ))}
       <button onClick={() => bubbleSort(itemsArray, updateBars)}>
         Bubble Sort
+      </button>
+      <button onClick={() => selectionSort(itemsArray, updateBars)}>
+        Selection Sort
       </button>
     </div>
   );
