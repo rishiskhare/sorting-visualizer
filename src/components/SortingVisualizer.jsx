@@ -55,14 +55,16 @@ const SortingVisualizer = () => {
   return (
     <div className="daddy">
       <div className="topG">
-        <input type="range" 
-                  min="10" 
-                  max="100" 
-                  id="slidah"
-                  onChange={(event) => {
-                    setNumItems(event.target.value);
-                    setItemsArray(generateDefaultArray(event.target.value))}
-                  }/>
+        <input
+          type="range"
+          min="10"
+          max="100"
+          id="slidah"
+          onChange={(event) => {
+            setNumItems(event.target.value);
+            setItemsArray(generateDefaultArray(event.target.value));
+          }}
+        />
         <button
           className="btnn"
           onClick={() => setItemsArray(shuffleArray(itemsArray))}
@@ -70,13 +72,15 @@ const SortingVisualizer = () => {
           Shuffle
         </button>
       </div>
-      
+
       <div className="barHolder">
         {itemsArray.map((item) => (
           <h1
-            style={{ height: `${(item / numItems) * 90 + 10}%`,
-                      width: `${(numItems > 50)? "5px" : "10px"}`,
-                      "margin-left": `${(numItems > 60)? "2px" : "4px"}`}}
+            style={{
+              height: `${(item / numItems) * 90 + 10}%`,
+              width: `${numItems > 50 ? "5px" : "10px"}`,
+              "margin-left": `${numItems > 60 ? "2px" : "4px"}`,
+            }}
             className="bar"
             key={item}
           ></h1>
