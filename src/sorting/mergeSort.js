@@ -29,12 +29,11 @@ const merge = (arr, left, mid, right) => {
     if (leftHalf[leftIndex] < rightHalf[rightIndex]) {
       arr[arrIndex] = leftHalf[leftIndex];
       leftIndex++;
-      // changes.push([...arr]);
     } else {
       arr[arrIndex] = rightHalf[rightIndex];
       rightIndex++;
-      // changes.push([...arr]);
     }
+    changes.push([...arr]);
     arrIndex++;
   }
 

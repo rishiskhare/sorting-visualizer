@@ -9,7 +9,7 @@ import LSDRadix from "../sorting/LSDRadix";
 
 const SortingVisualizer = () => {
   const [numItems, setNumItems] = useState(25);
-  let delay = 100;
+  let delay = 10;
 
   const generateDefaultArray = (items) => {
     const arr = [];
@@ -52,7 +52,7 @@ const SortingVisualizer = () => {
 
   return (
     <div className="body-container">
-      <h1 class="header-text">Sorting Visualizer</h1>
+      <h1 className="header-text">Sorting Visualizer</h1>
       <div className="bar-container">
         {itemsArray.map((item) => (
           <h1
