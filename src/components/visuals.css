@@ -44,3 +44,8 @@ body,
   font-family: "Space Mono", monospace;
   margin-top: 16px;
 }
+
+.bar-ctr {
+    display: flex;
+    align-self: center;
+}
