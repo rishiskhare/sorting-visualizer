@@ -63,7 +63,7 @@ const SortingVisualizer = () => {
               marginReft: `${numItems > 60 ? "2px" : "4px"}`,
             }}
             className="bar"
-            key={item}
+            key={item + Math.random()}
           ></h1>
         ))}
       </div>
