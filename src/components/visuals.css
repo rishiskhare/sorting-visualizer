@@ -1,55 +1,46 @@
-html, body, .App, #root, .daddy {
-    height: 100%;
-    width: 100%;
+html,
+body,
+.App,
+#root,
+.body-container {
+  height: 100%;
+  width: 100%;
 }
-button {
-    display: flex;
-    width: 100px;
-    height: 40px;
-    align-items: center;
-    justify-content: center;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-.btnn {
-    display: flex;
-    align-self: center;
-    justify-self: center;
-}
-.daddy{
-    display: grid;
-    grid-template-rows: 1fr 10fr 1fr;
-    width: auto;
+.body-container {
+  display: grid;
+  grid-template-rows: 1fr 10fr 1fr;
+  width: auto;
 }
 
-.barHolder {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+.bar-container {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 .bar {
-    /* border: solid black 1px; */
-    margin: 0;
-    margin-left: 4px;
-    margin-right: 4px;
-    height: 100%;
-    transition: all 0.3s ease;
-    background-color: black;
+  /* border: solid black 1px; */
+  margin: 0;
+  margin-left: 4px;
+  margin-right: 4px;
+  height: 100%;
+  transition: all 0.3s ease;
+  background-color: black;
 }
 
 .barCh {
-    background-color: chartreuse;
+  background-color: chartreuse;
 }
 
-.btnnHolder {
-    display: flex;
-    justify-self: center;
-    align-self: center;
+.slider {
+  max-width: 250px;
 }
 
-.topG {
-    display: flex;
-    align-self: center;
-    justify-content: center;
+.menu {
+  /* margin-top: 16px; */
+}
+
+.header-text {
+  font-family: "Space Mono", monospace;
+  margin-top: 16px;
 }
