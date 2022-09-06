@@ -5,10 +5,11 @@ import bubbleSort from "../sorting/bubbleSort";
 import selectionSort from "../sorting/selectionSort";
 import insertionSort from "../sorting/insertionSort";
 import mergeSort from "../sorting/mergeSort";
+import LSDRadix from "../sorting/LSDRadix";
 
 const SortingVisualizer = () => {
   const [numItems, setNumItems] = useState(25);
-  let delay = 50;
+  let delay = 100;
 
   const generateDefaultArray = (items) => {
     const arr = [];
@@ -59,6 +60,7 @@ const SortingVisualizer = () => {
               height: `${(item / numItems) * 90 + 10}%`,
               width: `${numItems > 50 ? "5px" : "10px"}`,
               marginLeft: `${numItems > 60 ? "2px" : "4px"}`,
+              marginReft: `${numItems > 60 ? "2px" : "4px"}`,
             }}
             className="bar"
             key={item}
@@ -75,8 +77,8 @@ const SortingVisualizer = () => {
         selectionSort={selectionSort}
         insertionSort={insertionSort}
         mergeSort={mergeSort}
+        LSDRadix={LSDRadix}
       />
-      <div className="btnnHolder"></div>
     </div>
   );
 };

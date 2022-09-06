@@ -11,6 +11,7 @@ const Menu = ({
   selectionSort,
   insertionSort,
   mergeSort,
+  LSDRadix,
 }) => {
   return (
     <div className="menu">
@@ -67,6 +68,12 @@ const Menu = ({
           onClick={() => mergeSort(itemsArray, updateBars)}
         >
           Merge Sort
+        </Button>
+        <Button
+          className="mx-2 p-2 btn"
+          onClick={() => LSDRadix(itemsArray, updateBars)}
+        >
+          LSD Radix Sort
         </Button>
       </ButtonToolbar>
     </div>
