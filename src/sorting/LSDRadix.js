@@ -17,7 +17,6 @@ const LSDRadix = (a, updateBars) => {
         changes.push([...temp]);
         rel = temp;
     }
-    console.log("HER!!!", changes);
     updateBars(changes);
 };
 

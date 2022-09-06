@@ -53,7 +53,7 @@ const SortingVisualizer = () => {
   return (
     <div className="body-container">
       <h1 className="header-text">Sorting Visualizer</h1>
-      <div className="bar-container">
+      <div className="bar-container bar-ctr">
         {itemsArray.map((item) => (
           <h1
             style={{
