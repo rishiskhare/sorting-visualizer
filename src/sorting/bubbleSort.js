@@ -2,7 +2,7 @@ const bubbleSort = (a, updateBars) => {
   let changes = [];
   let arr = JSON.parse(JSON.stringify(a));
   for (let i = 0; i < arr.length - 1; i++) {
-    for (let j = i + 1; j < arr.length; j++) {
+    for (let j = arr.length; j > i; j--) {
       if (arr[i] > arr[j]) {
         // Swap elements at i and j
         const temp = arr[i];

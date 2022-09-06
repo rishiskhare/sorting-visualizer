@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import bubbleSort from "../sorting/bubbleSort";
+import "./visuals.css";
 import selectionSort from "../sorting/selectionSort";
 import insertionSort from "../sorting/selectionSort";
 
 const SortingVisualizer = () => {
   const [numItems, setNumItems] = useState(25);
   // const [delay, setDelay] = useState(500);
-  let delay = 200;
+  let delay = 50;
+  let maxVal = 100;
   const [i, seti] = useState(1);
   const [timeOuts, setTimeOuts] = useState([]);
 
@@ -16,6 +18,7 @@ const SortingVisualizer = () => {
     for (let i = 0; i < items; i++) {
       arr.push(i);
     }
+    maxVal = Math.max(...arr);
     return arr;
   };
 
@@ -28,22 +31,15 @@ const SortingVisualizer = () => {
     const timer = (arr) =>
       setTimeout(() => {
         setItemsArray(arr);
+
         console.log("CHANGE");
       }, delay * i);
     items.forEach((arr) => {
       timer(arr);
       i++;
-      // timer();
     });
     clearTimeout(timer);
     console.log("DONE!");
-    // setTimeOuts([
-    //   ...timeOuts,
-    //   setTimeout(() => {
-    //     setItemsArray(items);
-    //   }, delay * i),
-    // ]);
-    // seti(i + 1);
   };
 
   const shuffleArray = (a) => {
@@ -58,22 +54,35 @@ const SortingVisualizer = () => {
   };
 
   return (
-    <div>
-      <button onClick={() => setItemsArray(shuffleArray(itemsArray))}>
+    <div className="daddy">
+      <button
+        className="btnn"
+        onClick={() => setItemsArray(shuffleArray(itemsArray))}
+      >
         Shuffle
       </button>
-      {itemsArray.map((item) => (
-        <h1 key={item}>{item}</h1>
-      ))}
-      <button onClick={() => bubbleSort(itemsArray, updateBars)}>
-        Bubble Sort
-      </button>
-      <button onClick={() => selectionSort(itemsArray, updateBars)}>
-        Selection Sort
-      </button>
-      <button onClick={() => insertionSort(itemsArray, updateBars)}>
-        Insertion Sort
-      </button>
+      <div className="barHolder">
+        {itemsArray.map((item) => (
+          <h1
+            style={{ height: `${(item / maxVal) * 90 + 10}%` }}
+            className="bar"
+            key={item}
+          >
+            {item}
+          </h1>
+        ))}
+      </div>
+      <div className="btnnHolder">
+        <button onClick={() => bubbleSort(itemsArray, updateBars)}>
+          Bubble Sort
+        </button>
+        <button onClick={() => selectionSort(itemsArray, updateBars)}>
+          Selection Sort
+        </button>
+        <button onClick={() => insertionSort(itemsArray, updateBars)}>
+          Insertion Sort
+        </button>
+      </div>
     </div>
   );
 };
