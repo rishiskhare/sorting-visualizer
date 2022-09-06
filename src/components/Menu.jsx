@@ -34,7 +34,7 @@ const Menu = ({
 
         <Form.Range
           className="mx-3 p-0 slider"
-          min="1"
+          min="10"
           max="100"
           value={numItems}
           onChange={changeNumItems}
