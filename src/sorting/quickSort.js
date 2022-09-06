@@ -12,6 +12,7 @@ const quickSortWithBounds = (arr, left, right) => {
     const medianIndex = partition(arr, left, right);
     quickSortWithBounds(arr, left, medianIndex - 1);
     quickSortWithBounds(arr, medianIndex + 1, right);
+    changes.push([...arr]);
   }
 };
 
