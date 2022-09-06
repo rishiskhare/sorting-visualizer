@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useEffect } from "react";
 import "./visuals.css";
+import Menu from "./Menu";
 import bubbleSort from "../sorting/bubbleSort";
 import selectionSort from "../sorting/selectionSort";
 import insertionSort from "../sorting/insertionSort";
@@ -9,7 +9,7 @@ import LSDRadix from "../sorting/LSDRadix";
 
 const SortingVisualizer = () => {
   const [numItems, setNumItems] = useState(25);
-  let delay = 100;
+  let delay = 10;
 
   const generateDefaultArray = (items) => {
     const arr = [];
@@ -17,6 +17,11 @@ const SortingVisualizer = () => {
       arr.push(i);
     }
     return arr;
+  };
+
+  const changeNumItems = (changeEvent) => {
+    setNumItems(changeEvent.target.value);
+    setItemsArray(generateDefaultArray(changeEvent.target.value));
   };
 
   const [itemsArray, setItemsArray] = useState(generateDefaultArray(numItems));
@@ -42,59 +47,38 @@ const SortingVisualizer = () => {
       arr[i] = arr[randomIndex];
       arr[randomIndex] = temp;
     }
-    return arr;
+    setItemsArray(arr);
   };
 
   return (
-    <div className="daddy">
-      <div className="topG">
-        <input
-          type="range"
-          min="10"
-          max="100"
-          id="slidah"
-          onChange={(event) => {
-            setNumItems(event.target.value);
-            setItemsArray(generateDefaultArray(event.target.value));
-          }}
-        />
-        <button
-          className="btnn"
-          onClick={() => setItemsArray(shuffleArray(itemsArray))}
-        >
-          Shuffle
-        </button>
-      </div>
-
-      <div className="barHolder">
+    <div className="body-container">
+      <h1 className="header-text">Sorting Visualizer</h1>
+      <div className="bar-container">
         {itemsArray.map((item) => (
           <h1
-            style={{ height: `${(item / numItems) * 90 + 10}%`,
-                      width: `${(numItems > 50)? "5px" : "10px"}`,
-                      "marginLeft": `${(numItems > 60)? "2px" : "4px"}`,
-                      "marginReft": `${(numItems > 60)? "2px" : "4px"}`}}
+            style={{
+              height: `${(item / numItems) * 90 + 10}%`,
+              width: `${numItems > 50 ? "5px" : "10px"}`,
+              marginLeft: `${numItems > 60 ? "2px" : "4px"}`,
+              marginReft: `${numItems > 60 ? "2px" : "4px"}`,
+            }}
             className="bar"
-            key={item}
+            key={item + Math.random()}
           ></h1>
         ))}
       </div>
-      <div className="btnnHolder">
-        <button onClick={() => bubbleSort(itemsArray, updateBars)}>
-          Bubble Sort
-        </button>
-        <button onClick={() => selectionSort(itemsArray, updateBars)}>
-          Selection Sort
-        </button>
-        <button onClick={() => insertionSort(itemsArray, updateBars)}>
-          Insertion Sort
-        </button>
-        <button onClick={() => mergeSort(itemsArray, updateBars)}>
-          Merge Sort
-        </button>
-        <button onClick={() => LSDRadix(itemsArray, updateBars)}>
-          LSD Radix Sort
-        </button>
-      </div>
+      <Menu
+        numItems={numItems}
+        changeNumItems={changeNumItems}
+        shuffleArray={shuffleArray}
+        itemsArray={itemsArray}
+        updateBars={updateBars}
+        bubbleSort={bubbleSort}
+        selectionSort={selectionSort}
+        insertionSort={insertionSort}
+        mergeSort={mergeSort}
+        LSDRadix={LSDRadix}
+      />
     </div>
   );
 };
