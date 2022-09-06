@@ -5,7 +5,6 @@ import bubbleSort from "../sorting/bubbleSort";
 import selectionSort from "../sorting/selectionSort";
 import insertionSort from "../sorting/insertionSort";
 import mergeSort from "../sorting/mergeSort";
-import insertionSort from "../sorting/selectionSort";
 import LSDRadix from "../sorting/LSDRadix";
 
 const SortingVisualizer = () => {
