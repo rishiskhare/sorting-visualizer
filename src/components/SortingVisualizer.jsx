@@ -4,11 +4,12 @@ import bubbleSort from "../sorting/bubbleSort";
 import "./visuals.css";
 import selectionSort from "../sorting/selectionSort";
 import insertionSort from "../sorting/selectionSort";
+import LSDRadix from "../sorting/LSDRadix";
 
 const SortingVisualizer = () => {
   const [numItems, setNumItems] = useState(25);
   // const [delay, setDelay] = useState(500);
-  let delay = 50;
+  let delay = 100;
   const [i, seti] = useState(1);
   const [timeOuts, setTimeOuts] = useState([]);
 
@@ -29,7 +30,6 @@ const SortingVisualizer = () => {
     const timer = (arr) =>
       setTimeout(() => {
         setItemsArray(arr);
-
         console.log("CHANGE");
       }, delay * i);
     items.forEach((arr) => {
@@ -75,7 +75,8 @@ const SortingVisualizer = () => {
           <h1
             style={{ height: `${(item / numItems) * 90 + 10}%`,
                       width: `${(numItems > 50)? "5px" : "10px"}`,
-                      "margin-left": `${(numItems > 60)? "2px" : "4px"}`}}
+                      "marginLeft": `${(numItems > 60)? "2px" : "4px"}`,
+                      "marginReft": `${(numItems > 60)? "2px" : "4px"}`}}
             className="bar"
             key={item}
           ></h1>
@@ -90,6 +91,9 @@ const SortingVisualizer = () => {
         </button>
         <button onClick={() => insertionSort(itemsArray, updateBars)}>
           Insertion Sort
+        </button>
+        <button onClick={() => LSDRadix(itemsArray, updateBars)}>
+          LSD Radix Sort
         </button>
       </div>
     </div>
