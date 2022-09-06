@@ -5,6 +5,7 @@ import bubbleSort from "../sorting/bubbleSort";
 import selectionSort from "../sorting/selectionSort";
 import insertionSort from "../sorting/insertionSort";
 import mergeSort from "../sorting/mergeSort";
+import quickSort from "../sorting/quickSort";
 import LSDRadix from "../sorting/LSDRadix";
 
 const SortingVisualizer = () => {
@@ -77,6 +78,7 @@ const SortingVisualizer = () => {
         selectionSort={selectionSort}
         insertionSort={insertionSort}
         mergeSort={mergeSort}
+        quickSort={quickSort}
         LSDRadix={LSDRadix}
       />
     </div>
