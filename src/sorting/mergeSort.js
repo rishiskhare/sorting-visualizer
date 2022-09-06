@@ -5,7 +5,6 @@ const mergeSort = (a, updateBars) => {
   let arr = JSON.parse(JSON.stringify(a));
   mergeSortWithBounds(arr, 0, arr.length - 1);
   updateBars(changes);
-  console.log(changes);
 };
 
 const mergeSortWithBounds = (arr, left, right) => {
@@ -30,9 +29,11 @@ const merge = (arr, left, mid, right) => {
     if (leftHalf[leftIndex] < rightHalf[rightIndex]) {
       arr[arrIndex] = leftHalf[leftIndex];
       leftIndex++;
+      // changes.push([...arr]);
     } else {
       arr[arrIndex] = rightHalf[rightIndex];
       rightIndex++;
+      // changes.push([...arr]);
     }
     arrIndex++;
   }
@@ -41,12 +42,14 @@ const merge = (arr, left, mid, right) => {
     arr[arrIndex] = leftHalf[leftIndex];
     leftIndex++;
     arrIndex++;
+    // changes.push([...arr]);
   }
 
   while (rightIndex < rightArrSize) {
     arr[arrIndex] = rightHalf[rightIndex];
     rightIndex++;
     arrIndex++;
+    // changes.push([...arr]);
   }
   changes.push([...arr]);
 };

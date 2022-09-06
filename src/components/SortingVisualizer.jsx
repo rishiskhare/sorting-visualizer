@@ -8,10 +8,7 @@ import mergeSort from "../sorting/mergeSort";
 
 const SortingVisualizer = () => {
   const [numItems, setNumItems] = useState(25);
-  // const [delay, setDelay] = useState(500);
   let delay = 50;
-  const [i, seti] = useState(1);
-  const [timeOuts, setTimeOuts] = useState([]);
 
   const generateDefaultArray = (items) => {
     const arr = [];
@@ -24,21 +21,16 @@ const SortingVisualizer = () => {
   const [itemsArray, setItemsArray] = useState(generateDefaultArray(numItems));
 
   const updateBars = (items) => {
-    // console.log(delay * i);
-    console.log("UPDATING BARS");
     let i = 0;
     const timer = (arr) =>
       setTimeout(() => {
         setItemsArray(arr);
-
-        console.log("CHANGE");
       }, delay * i);
     items.forEach((arr) => {
       timer(arr);
       i++;
     });
     clearTimeout(timer);
-    console.log("DONE!");
   };
 
   const shuffleArray = (a) => {
@@ -79,7 +71,7 @@ const SortingVisualizer = () => {
             style={{
               height: `${(item / numItems) * 90 + 10}%`,
               width: `${numItems > 50 ? "5px" : "10px"}`,
-              "margin-left": `${numItems > 60 ? "2px" : "4px"}`,
+              marginLeft: `${numItems > 60 ? "2px" : "4px"}`,
             }}
             className="bar"
             key={item}
