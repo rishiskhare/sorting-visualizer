@@ -9,7 +9,6 @@ const SortingVisualizer = () => {
   const [numItems, setNumItems] = useState(25);
   // const [delay, setDelay] = useState(500);
   let delay = 50;
-  let maxVal = 100;
   const [i, seti] = useState(1);
   const [timeOuts, setTimeOuts] = useState([]);
 
@@ -18,7 +17,6 @@ const SortingVisualizer = () => {
     for (let i = 0; i < items; i++) {
       arr.push(i);
     }
-    maxVal = Math.max(...arr);
     return arr;
   };
 
@@ -55,21 +53,32 @@ const SortingVisualizer = () => {
 
   return (
     <div className="daddy">
-      <button
-        className="btnn"
-        onClick={() => setItemsArray(shuffleArray(itemsArray))}
-      >
-        Shuffle
-      </button>
+      <div className="topG">
+        <input type="range" 
+                  min="10" 
+                  max="100" 
+                  id="slidah"
+                  onChange={(event) => {
+                    setNumItems(event.target.value);
+                    setItemsArray(generateDefaultArray(event.target.value))}
+                  }/>
+        <button
+          className="btnn"
+          onClick={() => setItemsArray(shuffleArray(itemsArray))}
+        >
+          Shuffle
+        </button>
+      </div>
+      
       <div className="barHolder">
         {itemsArray.map((item) => (
           <h1
-            style={{ height: `${(item / maxVal) * 90 + 10}%` }}
+            style={{ height: `${(item / numItems) * 90 + 10}%`,
+                      width: `${(numItems > 50)? "5px" : "10px"}`,
+                      "margin-left": `${(numItems > 60)? "2px" : "4px"}`}}
             className="bar"
             key={item}
-          >
-            {item}
-          </h1>
+          ></h1>
         ))}
       </div>
       <div className="btnnHolder">

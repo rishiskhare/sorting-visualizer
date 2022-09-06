@@ -29,13 +29,13 @@ button {
     align-items: flex-end;
 }
 .bar {
-    border: solid black 1px;
-    width: 2em;
+    /* border: solid black 1px; */
     margin: 0;
-    margin-left: 3px;
-    margin-right: 2px;
+    margin-left: 4px;
+    margin-right: 4px;
     height: 100%;
     transition: all 0.3s ease;
+    background-color: black;
 }
 
 .barCh {
@@ -46,4 +46,10 @@ button {
     display: flex;
     justify-self: center;
     align-self: center;
+}
+
+.topG {
+    display: flex;
+    align-self: center;
+    justify-content: center;
 }
