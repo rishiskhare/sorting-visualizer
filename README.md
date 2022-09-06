@@ -1,4 +1,4 @@
 # SORTING VISUALIZER
 
 ## Made by
-### `rishikhare, myxamediyar`
+### `rishiskhare, myxamediyar`
