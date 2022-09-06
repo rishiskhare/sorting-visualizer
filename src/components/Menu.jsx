@@ -47,30 +47,35 @@ const Menu = ({
         </Button>
         <Button
           className="mx-2 p-2 btn"
+          variant="outline-primary"
           onClick={() => bubbleSort(itemsArray, updateBars)}
         >
           Bubble Sort
         </Button>
         <Button
           className="mx-2 p-2 btn"
+          variant="outline-primary"
           onClick={() => selectionSort(itemsArray, updateBars)}
         >
           Selection Sort
         </Button>
         <Button
           className="mx-2 p-2 btn"
+          variant="outline-primary"
           onClick={() => insertionSort(itemsArray, updateBars)}
         >
           Insertion Sort
         </Button>
         <Button
           className="mx-2 p-2 btn"
+          variant="outline-primary"
           onClick={() => mergeSort(itemsArray, updateBars)}
         >
           Merge Sort
         </Button>
         <Button
           className="mx-2 p-2 btn"
+          variant="outline-primary"
           onClick={() => LSDRadix(itemsArray, updateBars)}
         >
           LSD Radix Sort
