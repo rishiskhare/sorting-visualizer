@@ -1,5 +1,6 @@
 import React from "react";
 import { ButtonToolbar, Form, Button } from "react-bootstrap";
+import quickSort from "../sorting/quickSort";
 
 const Menu = ({
   numItems,
@@ -72,6 +73,13 @@ const Menu = ({
           onClick={() => mergeSort(itemsArray, updateBars)}
         >
           Merge Sort
+        </Button>
+        <Button
+          className="mx-2 p-2 btn"
+          variant="outline-primary"
+          onClick={() => quickSort(itemsArray, updateBars)}
+        >
+          Quick Sort
         </Button>
         <Button
           className="mx-2 p-2 btn"

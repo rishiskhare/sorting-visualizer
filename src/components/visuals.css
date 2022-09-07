@@ -46,6 +46,10 @@ body,
 }
 
 .bar-ctr {
-    display: flex;
-    align-self: center;
+  display: flex;
+  align-self: center;
+}
+
+.btn {
+  margin: 8px;
 }
