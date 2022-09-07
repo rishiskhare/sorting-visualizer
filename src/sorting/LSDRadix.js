@@ -20,10 +20,8 @@ const LSDRadix = (a, updateBars) => {
     updateBars(changes);
 };
 
-const clearMap = function(map, what = 0) {
-    for (let i = 0; i < 10; i++) {
-        map.set(i, []);
-    }
+const clearMap = function(map) {
+    for (let i = 0; i < 10; i++) map.set(i, []);
 }
 
 export default LSDRadix;
