@@ -10,7 +10,7 @@ import LSDRadix from "../sorting/LSDRadix";
 
 const SortingVisualizer = () => {
   const [numItems, setNumItems] = useState(25);
-  let delay = 10;
+  let delay = 50;
 
   const generateDefaultArray = (items) => {
     const arr = [];
