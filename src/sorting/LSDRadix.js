@@ -14,7 +14,6 @@ const LSDRadix = (a, updateBars) => {
             curElemIndex.get(ind).push(elem);
         }
         let c = 0;
-        
         for (let i = 0; i < 10; i++) {
             for (let g = 0; g < curElem.get(i).length 
                 && curElem.get(i).length !== rel.length; g++) {
