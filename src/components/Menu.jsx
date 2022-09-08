@@ -13,6 +13,7 @@ const Menu = ({
   insertionSort,
   mergeSort,
   LSDRadix,
+  changeDelay
 }) => {
   return (
     <div className="menu">
@@ -36,9 +37,9 @@ const Menu = ({
         <Form.Range
           className="mx-3 p-0 slider"
           min="10"
-          max="100"
+          max="400"
           value={numItems}
-          onChange={changeNumItems}
+          onChange={(event) => {changeNumItems(event); changeDelay(event)}}
         />
         <Button
           className="mx-2 p-2 btn"
