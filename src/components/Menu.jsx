@@ -37,7 +37,7 @@ const Menu = ({
         <Form.Range
           className="mx-3 p-0 slider"
           min="10"
-          max="400"
+          max="300"
           value={numItems}
           onChange={(event) => {changeNumItems(event); changeDelay(event)}}
         />

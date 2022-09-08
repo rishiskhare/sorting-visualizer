@@ -27,7 +27,7 @@ const SortingVisualizer = () => {
 
   const changeDelay = (changeEvent) => {
     
-    setDelay((changeEvent.target.value > 300)? 3 : 10);
+    setDelay((changeEvent.target.value > 200)? 4 : 10);
     //setItemsArray(generateDefaultArray(changeEvent.target.value));
   };
 
@@ -61,15 +61,13 @@ const SortingVisualizer = () => {
     if (n < 60) return "4px";
     if (n < 100) return "2px";
     if (n < 170) return "2px";
-    if (n < 401) return "1px";
     return "1px"
   }
 
   const sizes = (n) => {
     if (n < 60) return "10px";
     if (n < 100) return "5px";
-    if (n < 200) return "3px";
-    if (n < 340) return "1.3px";
+    if (n < 200) return "2px";
     return "1px"
   }
 
