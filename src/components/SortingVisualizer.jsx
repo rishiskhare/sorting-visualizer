@@ -26,9 +26,7 @@ const SortingVisualizer = () => {
   };
 
   const changeDelay = (changeEvent) => {
-    
-    setDelay((changeEvent.target.value > 200)? 4 : 10);
-    //setItemsArray(generateDefaultArray(changeEvent.target.value));
+    setDelay((changeEvent.target.value > 200) ? 4 : 10);
   };
 
   const [itemsArray, setItemsArray] = useState(generateDefaultArray(numItems));
